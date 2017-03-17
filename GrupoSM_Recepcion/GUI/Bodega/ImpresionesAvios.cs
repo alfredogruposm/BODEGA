@@ -29,7 +29,7 @@ namespace GrupoSM_Recepcion.GUI.Bodega
 
                 string nombre, tipo;
                 int id;
-                decimal cantidad; 
+                decimal cantidad;
 
                 foreach (DataGridViewRow row in dataGridView2.Rows)
                 {
@@ -43,7 +43,7 @@ namespace GrupoSM_Recepcion.GUI.Bodega
                     {
                         tipo = row1.Cells[0].Value.ToString();
 
-                        id = Convert.ToInt16(row1.Cells[0].Value);
+                        id = Convert.ToInt16(row1.Cells[1].Value);
 
                         source.Add(new Services.AviosAlmacen.AvioAlmacen(nombre, tipo, cantidad, id));
                     }
@@ -52,6 +52,26 @@ namespace GrupoSM_Recepcion.GUI.Bodega
                 dataGridView1.DataSource = source;
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DAO.AviosDAO aviosdao = new DAO.AviosDAO();
+
+            dataGridView2.DataSource = aviosdao.existenciascatalogoalmacenavios();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DAO.AviosDAO aviosdao = new DAO.AviosDAO();
+            aviosdao.nombre = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+
+            dataGridView3.DataSource = aviosdao.datoscatalogoalmacenavios();
+        }
+
+        private void ImpresionesAvios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
