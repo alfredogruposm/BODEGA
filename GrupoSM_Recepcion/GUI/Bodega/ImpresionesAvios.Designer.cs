@@ -45,6 +45,7 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 68);
             this.dataGridView1.Name = "dataGridView1";
@@ -122,6 +123,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ImpresionesAvios";
             this.Text = "Avios";
+            this.Load += new System.EventHandler(this.ImpresionesAvios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

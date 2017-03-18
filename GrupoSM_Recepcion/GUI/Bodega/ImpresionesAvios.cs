@@ -41,7 +41,7 @@ namespace GrupoSM_Recepcion.GUI.Bodega
                     cantidad = Convert.ToDecimal(row.Cells[1].Value.ToString());
                     foreach (DataGridViewRow row1 in dataGridView3.Rows)
                     {
-                        tipo = row1.Cells[0].Value.ToString();
+                        tipo = row1.Cells[2].Value.ToString();
 
                         id = Convert.ToInt16(row1.Cells[0].Value);
 
@@ -52,6 +52,11 @@ namespace GrupoSM_Recepcion.GUI.Bodega
                 dataGridView1.DataSource = source;
 
             }
+        }
+
+        private void ImpresionesAvios_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
